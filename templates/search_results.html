@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if queryset %}
+        <ul>
+            {% for object in queryset %}
+                <li>{{ object }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No matches.</p>
+    {% endif %}
+
+<a href="{% url 'offers_streets' %}" class="btn btn-primary"> Przejdź do następnej sekcji </a>
+
+
+<a href="{% url 'search_streets' %}" class="btn btn-primary"> Powrót </a>
+
+
+<a href="{% url 'salesmen_sales' %}" class="btn btn-primary"> Sprawdź sprzedawcow </a>
+
+
+
+    <style>
+        .btn {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+
+
+
+</body>
+</html>

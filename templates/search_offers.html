@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search by offers</title>
+</head>
+<body>
+    <h1>Search by offers</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Search">
+    </form>
+
+<a href="{% url 'secure_view' %}" class="btn btn-primary">Przejdź do następnej sekcji</a>
+
+
+<a href="{% url 'search_streets' %}" class="btn btn-primary"> Powrót </a>
+
+
+
+ <style>
+        .btn {
+            display: block;
+            margin-bottom: 10px;
+        }
+    </style>
+
+
+</body>
+</html>

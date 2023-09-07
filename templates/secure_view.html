@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wyszukiwarka ulic</title>
+</head>
+<body>
+    <h1>Wyszukiwarka ulic</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="search_query" placeholder="Wyszukaj ulicę">
+        <button type="submit">Szukaj</button>
+    </form>
+
+    <ul>
+        {% for street in streets %}
+            <li>{{ street }}</li>
+        {% empty %}
+            <li>Brak wyników</li>
+        {% endfor %}
+    </ul>
+
+<a href="{% url 'search_streets' %}" class="btn btn-primary"> Powrót </a>
+
+</body>
+</html>

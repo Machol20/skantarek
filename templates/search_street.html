@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Street Search</title>
+</head>
+<body>
+    <h1>Street Search</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Search">
+    </form>
+
+<a href="{% url 'import_excel' %}" class="btn btn-primary"> Dodaj Plik Exela </a>
+
+</body>
+</html>

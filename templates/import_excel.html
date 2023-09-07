@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Import data</title>
+</head>
+<body>
+    <h1>Import data from Excel file</h1>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Import">
+    </form>
+    {% if success_message %}
+        <p>{{ success_message }}</p>
+    {% endif %}
+    {% if error_message %}
+        <p>{{ error_message }}</p>
+    {% endif %}
+
+
+<a href="{% url 'search_streets' %}" class="btn btn-primary"> Powrót </a>
+
+</body>
+</html>
